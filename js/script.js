@@ -144,3 +144,22 @@ sr.reveal(`.home__social`, { delay: 600 })
 sr.reveal(`.about__img, .contact__box`, { origin: 'left' })
 sr.reveal(`.about__data, .contact__form`, { origin: 'right' })
 sr.reveal(`.steps__card, .product__card, .questions__group, .footer`, { interval: 100 })
+
+// COUNT UP Code
+
+function animateCount(elementId, finalCount, suffix) {
+    let element = document.getElementById(elementId);
+    let currentCount = 0;
+    let counts = setInterval(function () {
+        currentCount++;
+        if (currentCount <= finalCount) {
+            element.textContent = currentCount + suffix;
+        } else {
+            clearInterval(counts);
+        }
+    }, 0.1);
+}
+animateCount("yearsOfExperience", 15, "+");
+animateCount("projectsCompleted", 651, "+");
+animateCount("happyClients", 753, "+");
+animateCount("socialFollowers", 36, "k+"); 
